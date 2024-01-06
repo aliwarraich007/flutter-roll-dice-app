@@ -8,22 +8,20 @@ const endAlignment = Alignment.bottomRight;
 class ContainerWidget extends StatelessWidget {
   // shorthand to pass the key parameter to the parent class
   // const added here can be used with objects to optimize performance.
-  const ContainerWidget({super.key});
+  const ContainerWidget({super.key, required this.colorList});
+  final List<Color> colorList;
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 44, 14, 177),
-            Color.fromARGB(255, 85, 8, 99)
-          ],
+          colors: colorList,
           begin: startAlignment,
           end: endAlignment,
         ),
       ),
       child: const Center(
-        child: StyledTextWidget(),
+        child: StyledTextWidget('changing text'),
       ),
     );
   }
