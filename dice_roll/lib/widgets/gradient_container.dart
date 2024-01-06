@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:dice_roll/widgets/styled_text.dart';
+
+// resuebale variable properties
+const startAlignment = Alignment.topLeft;
+const endAlignment = Alignment.bottomRight;
 
 class ContainerWidget extends StatelessWidget {
   // shorthand to pass the key parameter to the parent class
@@ -13,18 +18,12 @@ class ContainerWidget extends StatelessWidget {
             Color.fromARGB(255, 44, 14, 177),
             Color.fromARGB(255, 85, 8, 99)
           ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: startAlignment,
+          end: endAlignment,
         ),
       ),
       child: const Center(
-        child: Text(
-          'Dice App',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 28,
-          ),
-        ),
+        child: StyledTextWidget(),
       ),
     );
   }
