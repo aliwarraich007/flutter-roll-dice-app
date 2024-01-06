@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dice_roll/widgets/styled_text.dart';
+import 'package:dice_roll/widgets/dice_roller.dart';
 
 // resuebale variable properties
 const startAlignment = Alignment.topLeft;
@@ -10,6 +10,7 @@ class ContainerWidget extends StatelessWidget {
   // const added here can be used with objects to optimize performance.
   const ContainerWidget({super.key, required this.colorList});
   final List<Color> colorList;
+
   @override
   Widget build(context) {
     return Container(
@@ -21,7 +22,7 @@ class ContainerWidget extends StatelessWidget {
         ),
       ),
       child: const Center(
-        child: StyledTextWidget('changing text'),
+        child: DiceRoller(),
       ),
     );
   }
